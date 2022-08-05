@@ -1,0 +1,19 @@
+{
+  "name": "tailwind-pug-starter",
+  "version": "0.0.0",
+  "devDependencies": {
+    "tailwindcss": "^3.1.7"
+  },
+  "scripts": {
+    "css": "pnpm dlx tailwindcss -i ./src/tailwind.css -o ./dist/css/styles.css --watch",
+    "pug": "pnpm dlx pug-cli -w ./src/ -o ./dist/ -P",
+    "serve": "live-server --open=./dist/index.html",
+    "build": "pnpm dlx tailwindcss -i ./src/tailwind.css -o ./dist/css/styles.css && cp ./src/ ./dist/",
+    "dev": "concurrently \"pnpm run css\"  \"pnpm run pug\" \"pnpm run serve\""
+  },
+  "dependencies": {
+    "concurrently": "^7.3.0",
+    "live-server": "^1.2.2",
+    "pug": "^3.0.2"
+  }
+}
